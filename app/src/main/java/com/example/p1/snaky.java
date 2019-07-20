@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
-public class snaky extends View implements View.OnClickListener, Runnable
+public class snaky extends View implements  Runnable
 {
 
 
@@ -145,9 +145,9 @@ public class snaky extends View implements View.OnClickListener, Runnable
         screenHeight = 1000;
         choice = 1;
 
-        Thread d = new Thread (this);
+        Thread d = new Thread (snaky.this);
         d.start();
-        setOnClickListener(this);
+        //setOnClickListener(snaky.this);
 
         newGameSetup();
         status=2;
@@ -651,10 +651,8 @@ public class snaky extends View implements View.OnClickListener, Runnable
     }
     public void keyPressed (int newdirection)
     {
-
                 switch (newdirection)
                 {
-
                     case 1:
                         if (!(direction == 2))
                             direction = 1;
@@ -678,10 +676,6 @@ public class snaky extends View implements View.OnClickListener, Runnable
     }
 
 
-    @Override
-    public void onClick(View v) {
-
-    }
 
     public void setHandler(Handler handler) {
         this.handler = handler;
