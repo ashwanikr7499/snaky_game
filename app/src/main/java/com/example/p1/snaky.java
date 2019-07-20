@@ -624,6 +624,13 @@ public class snaky extends View implements  Runnable
                     {
 
                         status = 4;
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getContext(),"Game Over... Restart Application to play again",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
                         //Toast.makeText(getContext(),"Game Over... Restart Application to play again",Toast.LENGTH_LONG).show();
                         try{
                             d.sleep(2000);}catch(Exception e){}
@@ -640,6 +647,12 @@ public class snaky extends View implements  Runnable
                         try{
                             d.sleep(2000);}catch(Exception e){}
                         status = 4;
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getContext(),"Game Over... Restart Application to play again",Toast.LENGTH_LONG).show();
+                            }
+                        });
                         //Toast.makeText(getContext(),"Game Over... Restart Application to play again",Toast.LENGTH_LONG).show();
                         invalidate();
                         return;
